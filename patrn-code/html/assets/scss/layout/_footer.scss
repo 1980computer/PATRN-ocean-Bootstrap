@@ -1,0 +1,218 @@
+.footer,
+.footer2 {
+	@include fontsize(18, 30);
+	position: relative;
+	z-index: 50;
+	padding-top: 35px;
+	padding-bottom: 35px;
+	color: $black;
+	letter-spacing: 1px;
+	&:after {
+		@include absolute(0, -9999px, -9999px, 0);
+		background: $gray;
+		display: block;
+		z-index: -1;
+		content: "";
+	}
+	.btn {
+		letter-spacing: 0;
+	}
+	h3 {
+		@include fontsize(18, 30);
+		margin: 0;
+	}
+	p {
+		margin: 0 0 20px;
+		letter-spacing: 1px;
+	}
+	.icon-hand {
+		@include inline(top);
+		@include retina(sprite, png, 15px, 21px, 70px, 22px);
+		background-position: -28px 0;
+		margin: 0 4px 0 2px;
+	}
+	.col {
+		margin-bottom: 13px;
+		margin-top: 14px;
+		@include media('>=screen-sm') {
+			margin-bottom: 11px;
+			margin-top: 12px;
+		}
+	}
+	address {
+		font-style: normal;
+		margin: 3px 0 0;
+		.info {
+			display: block;
+			margin: 0 0 4px;
+		}
+		.icon-tree {
+			@include inline(top);
+			@include retina(sprite, png, 21px, 22px, 70px, 22px);
+			background-position: -48px 0;
+			margin: 0 8px 0 0;
+		}
+		.address {
+			margin: 34px 0 0;
+			display: block;
+		}
+		a {
+			color: $black;
+		}
+	}
+	.social-networks {
+		@extend %listreset;
+		@extend %clearfix;
+		margin: 0 -7px 35px;
+		li {
+			overflow: hidden;
+			@include inline;
+			padding: 5px 7px;
+			a {
+				float: left;
+				color: $black;
+				position: relative;
+				z-index: 540;
+				text-decoration: none;
+				i {
+					@include size(25px);
+					@include transition;
+					@include fontsize(15, 23);
+					background: $black;
+					text-align: center;
+					border-radius: 50%;
+					display: block;
+					padding: 0 0 0 2px;
+					color: $white;
+					&:before {
+						display: block;
+					}
+					&.icon-linkedin {
+						font-size: 14px;
+					}
+					&.icon-instagram {
+						font-size: 13px;
+					}
+					&.icon-github {
+						color: $black;
+						background: none;
+						padding: 0;
+						font-size: 25px;
+					}
+				}
+				&:hover,
+				&:focus {
+					i {
+						background: $brand-primary;
+						&.icon-github {
+							background: none;
+							color: $brand-primary;
+						}
+					}
+				}
+			}
+		}
+	}
+	.form-newsletter {
+		overflow: hidden;
+		margin: 0 0 28px;
+		p {
+			@include media('>=screen-md') {
+				margin: 0 0 13px;
+			}
+		}
+		.input-group {
+			@include size(260px, 35px);
+			display: block;
+			max-width: 100%;
+			border-radius: 4px;
+			background: $white;
+			position: relative;
+			border: 1px solid $brand-primary;
+			padding: 0 0 0 30px;
+			@include media('>=screen-xs') {
+				width: 320px;
+			}
+			.icon-envelope {
+				@include inline(top);
+				@include retina(sprite, png, 18px, 13px, 70px, 22px);
+				@include absolute(9px, 10px);
+			}
+		}
+		.btn-primary {
+			border: 0;
+			float: right;
+			min-width: 94px;
+			border-radius: 0;
+			text-align: center;
+		}
+		.form-control {
+			height: 33px;
+			width: calc(100% - 95px);
+			background: none;
+			border: 0;
+			border-radius: 0;
+			background: none;
+		}
+	}
+	.site-info {
+		overflow: hidden;
+		padding: 10px 0 0;
+		ul {
+			@extend %listreset;
+			letter-spacing: -.32em;
+			margin: 0 -13px 0 -17px;
+			li {
+				@include inline(top);
+				letter-spacing: 1px;
+				position: relative;
+				padding: 0 13px 5px 17px;
+				&:before {
+					@include size(4px);
+					@include absolute(13px, 0);
+					border-radius: 50%;
+					content: "";
+					background: $black;
+				}
+				a {
+					color: $black;
+				}
+			}
+		}
+	}
+}
+
+.footer .social-networks li a {
+	@include text-hide;
+}
+
+.footer2 {
+	padding-bottom: 17px;
+	padding-top: 17px;
+	@include media('>=screen-sm') {
+		padding-top: 19px;
+		padding-bottom: 19px;
+	}
+	.social-networks {
+		margin: 0;
+		li {
+			display: block;
+			padding: 0;
+			a {
+				padding: 0 0 0 34px;
+				i {
+					@include absolute(2px, 0);
+				}
+			}
+		}
+	}
+	.form-newsletter {
+		margin: 0;
+		@include media('>=screen-xs') {
+			margin: 0 14px 0 0;
+		}
+		@include media('>=screen-sm') {
+			margin: 0;
+		}
+	}
+}

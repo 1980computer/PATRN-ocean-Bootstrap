@@ -1,0 +1,236 @@
+.header,
+.header2 {
+	position: relative;
+	z-index: 600;
+	background: $gray;
+	&.header-fixed{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		min-width: 320px;
+		+ #main{
+			padding-top: 86px;
+			@include media('>=screen-xs'){
+				padding-top: 66px;
+			}
+			@include media('>=screen-md'){
+				padding-top: 85px;
+			}
+		}
+	}
+	&:after {
+		@include absolute(0, -9999px, -9999px, 0);
+		background: $gray;
+		display: block;
+		z-index: -1;
+		content: ""; 
+	}
+	.logo {
+		float: left;
+		width: 105px; 
+		margin: 2px 0 0;
+		@include media('>=screen-sm') {
+			width: 124px;
+			margin: 0; 
+		}
+		img {
+			@include img-responsive;
+		}
+	}
+	.navbar-default {
+		border: 0;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		.navbar-right {
+			float: right;
+		}
+		.navbar-collapse {
+			@include absolute(100%, 0, 0);
+			background: $black;
+			box-shadow: none;
+			padding: 0 9999px;
+			border: 0;
+			background: $black;
+			margin: 0 -9999px;
+			overflow: hidden;
+		}
+		.navbar-toggle {
+			@include fontsize(18, 24);
+			@include inline;
+			border: 0;
+			border-radius: 0;
+			padding: 0;
+			float: none;
+			margin: 0;
+			.text {
+				@include inline;
+				color: $black;
+				.text-close {
+					display: block;
+				}
+				.text-active {
+					display: none;
+				}
+			}
+			.bars {
+				@include inline;
+				@include size(30px, 18px);
+				position: relative;
+				margin: 0 0 0 13px;
+				&:after,
+				&:before,
+				span {
+					@include absolute(5px, 0, 0);
+					transition: all .25s ease-in-out;
+					height: 4px;
+					border-radius: 2px;
+					content: "";
+					background: $black;
+					transform: rotate(35deg);
+				}
+				span {
+					top: 6px;
+					opacity: 0;
+				}
+				&:after {
+					top: 5px;
+					transform: rotate(-35deg);
+				}
+			}
+			&.collapsed {
+				.bars {
+					&:after,
+					&:before,
+					span {
+						transform: rotate(0);
+						opacity: 1;
+					}
+					&:after {
+						top: 13px;
+					}
+					&:before {
+						top: -1px;
+					}
+				}
+				.text {
+					.text-close {
+						display: none;
+					}
+					.text-active {
+						display: block;
+					}
+				}
+			}
+			&:hover,
+			&:focus {
+				background: none;
+			}
+		}
+	}
+	.night {
+		@include text-hide;
+		@include inline;
+		text-decoration: none;
+		color: $black;
+		position: relative;
+		margin: 0 0 0 35px;
+		@include media('>=screen-sm') {
+			margin: 0 0 0 36px;
+		}
+		&:after {
+			background: $black;
+			@include absolute(-2px, -20px, auto, -2px);
+			content: "";
+			width: 1px;
+		}
+		&:before {
+			@include icon("\e906");
+			@include fontsize(20, 20);
+			display: block;
+		}
+		&:hover,
+		&:focus {
+			color: $brand-primary;
+		}
+	}
+	.navbar-nav {
+		padding: 18px 0;
+		@include media('>=screen-xs', '<screen-sm'){
+			padding: 18px 20px;
+		}
+		li {
+			padding: 15px 0 14px;
+			&.active a {
+				color: $brand-primary;
+			}
+			a {
+				@include font(30, 33);
+				color: $white;
+				text-align: right;
+				display: block;
+				padding: 0;
+				&:hover,
+				&:focus {
+					color: $brand-primary;
+				}
+			}
+		}
+	}
+}
+
+.header2 {
+	z-index: 500;
+	.night {
+		@include media('>=screen-sm') {
+			margin: 0 0 0 10px;
+			&:after {
+				display: none;
+			}
+			&:before {
+				@include fontsize(25, 25);
+			}
+		}
+	}
+	.navbar-default {
+		.navbar-toggle {
+			@include media('>=screen-sm') {
+				display: none;
+			}
+		}
+		.navbar-collapse {
+			@include media('>=screen-sm') {
+				height: auto !important;
+				margin: 0;
+				overflow: hidden;
+				padding: 0;
+				background: none;
+				position: static;
+				display: block !important;
+				.navbar-nav {
+					padding: 0;
+					text-align: center;
+					letter-spacing: -.32em;
+					li {
+						@include inline(top);
+						letter-spacing: 0;
+						padding: 2px 15px;
+						a {
+							@include fontsize(18, 22);
+							color: $black;
+							&:hover,
+							&:focus{
+								color:$brand-primary;
+							}
+						}
+						&.active{
+							a{
+								color:$brand-primary;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

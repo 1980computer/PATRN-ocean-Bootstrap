@@ -1,0 +1,42 @@
+body{
+	min-width: 320px;
+	-ms-overflow-style: scrollbar;
+	-webkit-font-smoothing: antialiased;
+}
+input[type="search"] {
+	box-sizing: content-box;
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="submit"],
+textarea,
+select {
+	-webkit-appearance: none;
+	@include box-shadow(none);
+}
+
+input[type="email"]:focus,input[type="email"]:active{
+	@include box-shadow(none);
+}
+a, button, input[type="submit"] {
+	outline: none !important;
+	&:hover, &:focus, &:active{
+		@include box-shadow(none !important);
+	}
+}
+.center-block {
+	float: none;
+}
+.clearfix{
+	clear: both;
+}
+a, button, input[type="submit"] {
+	outline: none !important;
+}
+.btn, .label{
+	white-space: normal;
+}
