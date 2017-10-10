@@ -12,7 +12,7 @@
 
 <hr>
 
-<p>The framework has been developed using <a href="http://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap(v3)</a> as the foundation which renders the files as html markup.</p>
+<p><b>Framework - Bootstrap Base</b><br>The framework has been developed using <a href="http://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap(v3)</a> as the foundation which renders the files as html markup.</p>
 
 <hr>
 
