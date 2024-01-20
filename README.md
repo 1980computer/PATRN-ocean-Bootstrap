@@ -40,8 +40,4 @@ Modal Project Slideshow Lightbox</p>
 
 <hr>
 
-<a href="https://twitter.com/davidbanthony" class="twitter-follow-button" data-show-count="false">Twitter - Follow @davidbanthony</a>
-
-<hr>
-
 <p>Free to use license 😊  with the hopes this inspires. Designed + Coded in 15.</p>
